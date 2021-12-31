@@ -1,0 +1,11 @@
+input:checked ~ .dot {
+    transform: translateX(100%);
+    margin-left: 6px;
+    background-image: linear-gradient(white);
+
+  }
+input:checked ~ .switch {
+    background-color: #FF0099;
+
+  }
+
