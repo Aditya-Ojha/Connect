@@ -1,7 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+
+import { Confessions, DateIdeas, LDR, Rebound } from './Tags';
 
 const User = () => {
     const [addTags, setAddTags] = useState(false);
+
+    const [selectedTags, setSelectedTags] = useState([]);
+    const tagPos = [2, 5, 8, 11];
 
     const handleTags = () => {
         setAddTags(!addTags);
@@ -61,69 +66,13 @@ const User = () => {
                 </div>
             </div>
 
-            <div className='h-fit mt-4'>
+            <div className='sm:w-[95%] h-fit mt-4 w-[80%]'>
                 <h2 className='sm:text-base text-black font-semibold font-Mulish text-xl mb-4'>Topics you follow:</h2>
-                <div className='flex flex-col items-center'>
-                    <div className='flex'>
-                        <div className='sm:px-1  flex justify-between items-center h-5 w-fit px-2 py-3 mb-4 mr-3.5 border-[3px] border-[#FEC6E8] rounded-sm'>
-                            <div className='sm:h-4 sm:w-4 sm:mr-1 w-7 h-6 mr-2'>
-                                <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                            <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-                            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='sm:px-1 flex justify-between items-center h-5 w-fit px-2 py-3 mb-4 mr-3.5 border-[3px] border-[#FEC6E8] rounded-sm'>
-                            <div className='sm:h-4 sm:w-4 sm:mr-1 w-7 h-6 mr-2'>
-                                <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                            <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-                            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-4 border-[3px] border-[#FEC6E8] rounded-sm'>
-                            <div className='sm:h-4 sm:w-4 sm:mr-1 w-7 h-6 mr-2'>
-                                <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                            <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-                            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex'>
-                        <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-4 mr-3.5 border-[3px] border-[#FEC6E8] rounded-sm'>
-                            <div className='sm:h-4 sm:w-4 sm:mr-1 w-7 h-6 mr-2'>
-                                <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                            <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-                            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-4 border-[3px] border-[#FEC6E8] rounded-sm'>
-                            <div className='sm:h-4 sm:w-4 sm:mr-1 w-7 h-6 mr-2'>
-                                <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                            <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-                            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                </div>
-                            </div>
-                        </div>
+                <div className='flex flex-col items-center w-full'>
+                    <div className='flex max-w-full flex-wrap justify-center'>
+                        {
+                            selectedTags.map((tag) => (tag))
+                        }
                     </div>
                 </div>
             </div>
@@ -150,50 +99,58 @@ const User = () => {
                 {
                     (addTags) ? (
                         <div className='h-40 w-full mt-4 overflow-y-auto bg-white rounded-md shadow-inner pt-4 px-4'>
-                            <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
-                                <div className='w-4 h-4 mr-2'>
-                                    <div className='bg-notebook w-full h-full bg-no-repeat bg-contain bg-center'>
+                            <button className='block' onClick={()=>{setSelectedTags([...selectedTags,<Confessions/>])}}>
+                                <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
+                                    <div className='w-4 h-4 mr-2'>
+                                        <div className='bg-notebook w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
+                                    </div>
+                                    <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Confessions</h4>
+                                    <div className='w-4 h-4'>
+                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
                                     </div>
                                 </div>
-                                <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Confessions</h4>
-                                <div className='w-4 h-4'>
-                                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                            </button>
+                            <button className='block' onClick={()=>{setSelectedTags([...selectedTags,<DateIdeas/>])}}>
+                                <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
+                                    <div className='w-4 h-4 mr-2'>
+                                        <div className='bg-bulb w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
+                                    </div>
+                                    <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Date Ideas</h4>
+                                    <div className='w-4 h-4'>
+                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
-                                <div className='w-4 h-4 mr-2'>
-                                    <div className='bg-bulb w-full h-full bg-no-repeat bg-contain bg-center'>
+                            </button>
+                            <button className='block' onClick={()=>{setSelectedTags([...selectedTags,<LDR/>])}}>
+                                <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
+                                    <div className='w-4 h-4 mr-2'>
+                                        <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
+                                    </div>
+                                    <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Long Distance</h4>
+                                    <div className='w-4 h-4'>
+                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
                                     </div>
                                 </div>
-                                <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Date Ideas</h4>
-                                <div className='w-4 h-4'>
-                                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                            </button>
+                            <button className='block' onClick={()=>{setSelectedTags([...selectedTags,<Rebound/>])}}>
+                                <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
+                                    <div className='w-4 h-4 mr-2'>
+                                        <div className='bg-notebook w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
+                                    </div>
+                                    <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Rebound</h4>
+                                    <div className='w-4 h-4'>
+                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
-                                <div className='w-4 h-4 mr-2'>
-                                    <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
-                                    </div>
-                                </div>
-                                <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Long Distance</h4>
-                                <div className='w-4 h-4'>
-                                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
-                                <div className='w-4 h-4 mr-2'>
-                                    <div className='bg-notebook w-full h-full bg-no-repeat bg-contain bg-center'>
-                                    </div>
-                                </div>
-                                <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Confessions</h4>
-                                <div className='w-4 h-4'>
-                                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                    </div>
-                                </div>
-                            </div>
+                            </button>
                         </div>) : (
                         null
                     )
