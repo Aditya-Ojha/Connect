@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css';
 
 import { Confessions, DateIdeas, LDR, Rebound } from './Tags';
@@ -7,16 +7,23 @@ const NewPost = () => {
     const [addTags, setAddTags] = useState(false);
 
     const [selectedTags, setSelectedTags] = useState([]);
-    const [id, setId] = useState(-1);
+    const [id, setId] = useState(0);
 
     const handleTags = () => {
         setAddTags(!addTags);
     }
 
     const updateTags = (Tag) => {
-        if (selectedTags.length < 3) {
+        let valid = true;
+        for(let i=0;i<selectedTags.length;i++){
+            if(selectedTags[i].type.name===Tag.type.name){
+                valid = false;
+                return;
+            }
+        }
+        
+        if (valid && selectedTags.length < 3) {
             setSelectedTags([...selectedTags, Tag]);
-            // console.log(id);
             setId(id + 1);
         }
 
@@ -25,10 +32,9 @@ const NewPost = () => {
     const deleteTag = (id) => {
         setSelectedTags((tags) => {
             return tags.filter((tag, index) => {
-                if (id !== index) {
+                if (id !== tag.props.id) {
                     return tag;
                 }
-                console.log(id);
             })
         })
     }
@@ -72,7 +78,7 @@ const NewPost = () => {
                 {
                     (addTags) ? (
                         <div className='h-60 w-full mt-4 overflow-y-auto bg-white rounded-md shadow-inner pt-4 px-4 flex flex-col'>
-                            <button onClick={() => { updateTags(<Confessions id={id} deleteTag={deleteTag} />) }}>
+                            <button onClick={() => { updateTags(<Confessions id={id} key={id} deleteTag={deleteTag} />) }}>
                                 <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
                                     <div className='w-4 h-4 mr-2'>
                                         <div className='bg-notebook w-full h-full bg-no-repeat bg-contain bg-center'>
@@ -85,7 +91,7 @@ const NewPost = () => {
                                     </div>
                                 </div>
                             </button>
-                            <button onClick={() => { updateTags(<DateIdeas id={id} deleteTag={deleteTag} />) }}>
+                            <button onClick={() => { updateTags(<DateIdeas id={id} key={id} deleteTag={deleteTag} />) }}>
                                 <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
                                     <div className='w-4 h-4 mr-2'>
                                         <div className='bg-bulb w-full h-full bg-no-repeat bg-contain bg-center'>
@@ -98,7 +104,7 @@ const NewPost = () => {
                                     </div>
                                 </div>
                             </button>
-                            <button onClick={() => { updateTags(<LDR id={id} deleteTag={deleteTag} />) }}>
+                            <button onClick={() => { updateTags(<LDR id={id} key={id} deleteTag={deleteTag} />) }}>
                                 <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
                                     <div className='w-4 h-4 mr-2'>
                                         <div className='bg-heart w-full h-full bg-no-repeat bg-contain bg-center'>
@@ -111,7 +117,7 @@ const NewPost = () => {
                                     </div>
                                 </div>
                             </button>
-                            <button onClick={() => { updateTags(<Rebound id={id} deleteTag={deleteTag} />) }}>
+                            <button onClick={() => { updateTags(<Rebound id={id} key={id} deleteTag={deleteTag} />) }}>
                                 <div className='flex justify-between items-center h-5 w-fit px-2 py-3 mb-6 border-2 border-[#FEC6E8] rounded-sm'>
                                     <div className='w-4 h-4 mr-2'>
                                         <div className='bg-sphere w-full h-full bg-no-repeat bg-contain bg-center'>

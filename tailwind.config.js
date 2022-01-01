@@ -58,6 +58,8 @@ module.exports = {
 
         'sm': { 'max': '639px' },
         // => @media (max-width: 639px) { ... }
+        'min_sm': { 'min': '639px' },
+        // => @media (min-width: 639px) { ... }
       },
     },
   },

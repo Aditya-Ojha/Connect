@@ -8,10 +8,12 @@ export const Confessions = (props) => {
                 </div>
             </div>
             <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Confessions</h4>
-            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+            <button onClick={()=>{props.deleteTag(props.id)}}>
+                <div className='sm:w-4 sm:h-4 w-5 h-5'>
+                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                    </div>
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
@@ -24,10 +26,12 @@ export const DateIdeas = (props) => {
                 </div>
             </div>
             <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Date Ideas</h4>
-            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+            <button onClick={()=>{props.deleteTag(props.id)}}>
+                <div className='sm:w-4 sm:h-4 w-5 h-5'>
+                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                    </div>
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
@@ -40,10 +44,12 @@ export const LDR = (props) => {
                 </div>
             </div>
             <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Long Distance</h4>
-            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+            <button onClick={()=>{props.deleteTag(props.id)}}>
+                <div className='sm:w-4 sm:h-4 w-5 h-5'>
+                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                    </div>
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
@@ -56,10 +62,12 @@ export const Rebound = (props) => {
                 </div>
             </div>
             <h4 className='sm:text-xs sm:mr-1 font-Mulish font-normal mr-2 text-base text-black'>Rebound</h4>
-            <div className='sm:w-4 sm:h-4 w-5 h-5'>
-                <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+            <button onClick={()=>{props.deleteTag(props.id)}}>
+                <div className='sm:w-4 sm:h-4 w-5 h-5'>
+                    <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
+                    </div>
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
