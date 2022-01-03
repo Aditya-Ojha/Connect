@@ -3,6 +3,7 @@ import React from 'react'
 import Post from './Post';
 import Search from './Search';
 import Trends from './Trends';
+import {ShimmerPost} from './Shimmer';
 import Navbar from '../Globals/Navbar';
 import Menu from '../Globals/Menu';
 import Guidelines from '../Globals/Guidelines';
@@ -27,7 +28,7 @@ const CommunityMain = () => {
                 {/* Post */}
                 <div className='col-span-2 lg:order-2 h-full flex flex-col items-center gap-y-6'>
 
-                  <Post />
+                  <ShimmerPost />
                   <Post />
                   <Post />
                   <Post />

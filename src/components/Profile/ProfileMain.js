@@ -4,6 +4,8 @@ import Navbar from '../Globals/Navbar';
 import Menu from '../Globals/Menu';
 import Guidelines from '../Globals/Guidelines';
 import User from './User';
+import { ShimmerProfile } from './Shimmer';
+import { ShimmerPost } from '../Community/Shimmer';
 
 const ProfileMain = () => {
 
@@ -21,7 +23,7 @@ const ProfileMain = () => {
                             <div className='grid grid-cols-3 lg:grid-cols-1 lg:gap-x-0   gap-4 h-full'>
                                 {/* Profile Data */}
                                 <div className='col-span-2 lg:order-2 h-full flex flex-col items-center pb-6'>
-                                    <User />
+                                    <User/>
                                 </div>
                                 {/* Right Content Guidelines */}
                                 <div className='col-span-1 lg:order-1'>

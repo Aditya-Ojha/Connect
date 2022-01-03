@@ -34,6 +34,7 @@ const Post = () => {
                         <h2 className='sm:text-base font-medium font-Dm text-lg text-[#081F32]'>Finn Norris</h2>
                         <h2 className='sm:text-base font-normal font-Mulish text-lg text-[#3F3D56]'>22/M/Delhi</h2>
                     </div>
+
                 </div>
 
                 <div className='h-fit mb-2'>
@@ -49,7 +50,7 @@ const Post = () => {
                             </div>
                         </button>
                         <h2 className='sm:text-sm ml-2 text-base font-Dm font-normal'>3</h2>
-                        <button onClick={()=>{setComment(!comment)}}>
+                        <button onClick={() => { setComment(!comment) }}>
                             <div className='w-6 h-6 ml-4'>
                                 <div className='bg-message w-full h-full bg-no-repeat bg-contain bg-center'>
                                 </div>
@@ -73,6 +74,7 @@ const Post = () => {
                     (comment) ? (
                         <>
                             <div className='w-full h-px mb-2.5 bg-black'></div>
+                            
                             <div className='h-full w-full flex flex-col items-start mb-2.5 py-2 px-3 bg-[#FFDEF2] rounded-md'>
                                 <div className='flex justify-center items-center mb-2'>
                                     <div className='w-14 h-12'>

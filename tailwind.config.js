@@ -38,6 +38,7 @@ module.exports = {
         'cake': "url('./Images/cake.svg')",
         'gender': "url('./Images/gender.svg')",
         'profile_photo': "url('./Images/profile_photo.svg')",
+        'myra': "url('./Images/myra.svg')",
       },
       fontFamily: {
         Dm: ['DM Sans', 'sans-serif'],
@@ -58,8 +59,22 @@ module.exports = {
 
         'sm': { 'max': '639px' },
         // => @media (max-width: 639px) { ... }
+
+        //MIN_WIDTH
         'min_sm': { 'min': '639px' },
         // => @media (min-width: 639px) { ... }
+
+        'min_md': { 'min': '767px' },
+        // => @media (min-width: 767px) { ... }
+
+        'min_lg': { 'min': '1023px' },
+        // => @media (min-width: 1023px) { ... }
+
+        'min_xl': { 'min': '1279px' },
+        // => @media (min-width: 1279px) { ... }
+
+        'min_2xl': { 'min': '1535px' },
+        // => @media (min-width: 1535px) { ... }
       },
     },
   },

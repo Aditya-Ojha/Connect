@@ -108,7 +108,7 @@ const User = () => {
             <div className='flex flex-col w-full px-6 h-fit mt-2 overflow-hidden'>
                 <button onClick={handleTags}>
                     <div className='w-full bg-[#F0F0F0] px-4 py-1 flex items-center border border-[#999999] rounded-md'>
-                        <input className='sm:text-xs sm:placeholder:text-xs w-full outline-none bg-[#F0F0F0] text-base text-[#666666] placeholder:font-Mulish placeholder:text-base' placeholder='Add more tags' />
+                        <input disabled className='sm:text-xs sm:placeholder:text-xs w-full cursor-pointer outline-none bg-[#F0F0F0] text-base text-[#666666] placeholder:font-Mulish placeholder:text-base' placeholder='Add more tags' />
 
                         <div className='w-3.5 h-1'>
                             {
@@ -134,10 +134,6 @@ const User = () => {
                                         </div>
                                     </div>
                                     <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Confessions</h4>
-                                    <div className='w-4 h-4'>
-                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                        </div>
-                                    </div>
                                 </div>
                             </button>
                             <button className='block' onClick={() => { updateTags(<DateIdeas id={id} key={id} deleteTag={deleteTag} />) }}>
@@ -147,10 +143,6 @@ const User = () => {
                                         </div>
                                     </div>
                                     <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Date Ideas</h4>
-                                    <div className='w-4 h-4'>
-                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                        </div>
-                                    </div>
                                 </div>
                             </button>
                             <button className='block' onClick={() => { updateTags(<LDR id={id} key={id} deleteTag={deleteTag} />) }}>
@@ -160,10 +152,6 @@ const User = () => {
                                         </div>
                                     </div>
                                     <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Long Distance</h4>
-                                    <div className='w-4 h-4'>
-                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                        </div>
-                                    </div>
                                 </div>
                             </button>
                             <button className='block' onClick={() => { updateTags(<Rebound id={id} key={id} deleteTag={deleteTag} />) }}>
@@ -173,10 +161,6 @@ const User = () => {
                                         </div>
                                     </div>
                                     <h4 className='font-Mulish font-normal mr-2 text-xs text-black'>Rebound</h4>
-                                    <div className='w-4 h-4'>
-                                        <div className='bg-cancel w-full h-full bg-no-repeat bg-contain bg-center'>
-                                        </div>
-                                    </div>
                                 </div>
                             </button>
                         </div>) : (

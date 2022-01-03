@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
     return (
         <div className="sm:px-2 bg-white sticky top-0 z-30 h-14 flex justify-between items-center px-8">
-            <div className='h-14 w-14 p-1'>
+            <div className='sm:ml-2 h-16 w-16 p-1 ml-[5%]'>
                 <div className='bg-no-repeat bg-cover bg-center bg-logo h-full w-full'></div>
             </div>
 
